@@ -7,7 +7,24 @@
   <meta name="description" content="Portfolio of Shivendra Gupta - Development Lead & Backend Architect with 9+ years of experience across FinTech, Legal SaaS, Enterprise CX, Java/Spring ecosystem, and Generative AI/Agentic systems.">
   <meta name="keywords" content="Shivendra Gupta, Development Lead, Principal Backend Engineer, Java, Spring Boot, Spring Modulith, Apache Kafka, Generative AI, MCP, Model Context Protocol, AWS, FinTech">
   <meta name="author" content="Shivendra Gupta">
-  <meta name="theme-color" content="#060913">
+  <meta name="theme-color" content="#060913" id="metaThemeColor">
+  <meta name="color-scheme" content="dark light">
+
+  <!-- Immediate Theme Detection to Prevent FOUC -->
+  <script>
+    (function() {
+      try {
+        const savedTheme = localStorage.getItem('portfolio-theme');
+        const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const initialTheme = savedTheme ? savedTheme : (systemPrefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', initialTheme);
+        const metaTheme = document.getElementById('metaThemeColor');
+        if (metaTheme) {
+          metaTheme.setAttribute('content', initialTheme === 'dark' ? '#060913' : '#f8fafc');
+        }
+      } catch (e) {}
+    })();
+  </script>
 
   <!-- OpenGraph / Social Sharing -->
   <meta property="og:type" content="website">
@@ -48,9 +65,13 @@
       </ul>
 
       <div class="nav-actions">
-        <a href="Shivendra_Gupta_Resume.pdf" class="btn btn-secondary btn-download" download="Shivendra_Gupta_Resume.pdf" aria-label="Download Shivendra Gupta's Resume">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-          <span>CV</span>
+        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle theme" title="Switch between dark and light theme">
+          <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
+          <svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+        </button>
+        <a href="Shivendra_Gupta_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-resume btn-download" aria-label="Open Shivendra Gupta's Resume in a new tab">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          <span>Resume</span>
         </a>
         <a href="#contact" class="btn btn-primary">Let's Talk</a>
         <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
@@ -142,10 +163,10 @@
                 Scalable multi-tenant SaaS platform built for law firms and solo practitioners, incorporating automated AI-powered workflows for legal research, client onboarding, and document management.
               </p>
               <ul class="highlight-points">
-                <li>Led a cross-functional engineering team of 7 developers, driving architectural blueprints, sprint planning, and structured code reviews.</li>
-                <li>Architected resilient Java microservices with clean data models and RESTful APIs capable of isolated multi-tenant operations.</li>
-                <li>Integrated Razorpay payment gateway from ground up for automated subscription lifecycle management, billing cycles, and secure checkout processing.</li>
-                <li>Collaborated directly with enterprise clients to translate domain legal workflows into robust technical architectures.</li>
+                <li>Architected isolated multi-tenant Java microservices featuring resilient RESTful APIs, clean data models, and database schema separation.</li>
+                <li>Built an end-to-end Razorpay payment engine from scratch, handling automated subscription tiers, webhook-driven recurring billing, and secure checkout processing.</li>
+                <li>Designed asynchronous message queuing with RabbitMQ to handle decoupled document processing pipelines and AI-assisted legal research workflows.</li>
+                <li>Engineered cloud-native backend deployments on Google Cloud Platform (GCP) with PostgreSQL, ensuring data isolation and operational resilience.</li>
               </ul>
             </div>
             <div class="tech-tags">
@@ -205,9 +226,9 @@
                 High-frequency platform for peer-to-peer financing, collateral matching, and regulatory securities lending transactions.
               </p>
               <ul class="highlight-points">
-                <li>Streamed and enriched high-volume portfolio documents with live market security data integrated via Apache Kafka, slashing data discrepancies.</li>
+                <li>Streamed and enriched high-volume portfolio documents with live market security data integrated via Apache Kafka, eliminating data discrepancies.</li>
                 <li>Engineered margin analysis modules secured with OAuth2 microservice communication for instant trade feasibility decisions.</li>
-                <li>Built automated event-driven notification infrastructure and implemented stateful borrow-trade pipelines using Spring State Machine.</li>
+                <li>Created the Availabilities & Needs trading module using Spring State Machine to reliably govern stateful borrow-trade lifecycles.</li>
                 <li>Devised optimized counterparty matching algorithms, drastically improving trade execution speed and collateral utilization.</li>
               </ul>
             </div>
@@ -235,9 +256,9 @@
                 B2B CX-as-a-service ecosystem engineered to boost customer conversion, accelerate expansion, and curtail user churn across enterprise touchpoints.
               </p>
               <ul class="highlight-points">
-                <li>Designed clean architectural boundaries using Spring Modulith, ensuring modular cohesion and strict domain separation without microservice sprawl.</li>
-                <li>Implemented enterprise-grade Role-Based Access Control (RBAC) and granular data-level authorization using Spring Security.</li>
-                <li>Orchestrated development sprints for 7 engineers, driving high code velocity while strictly maintaining architectural integrity.</li>
+                <li>Architected backend system using Spring Modulith to enforce clear domain module boundaries, ensuring high cohesion without microservice operational overhead.</li>
+                <li>Implemented enterprise-grade Role-Based Access Control (RBAC) and authorization mechanisms using Spring Security to safeguard client tenants.</li>
+                <li>Designed performant GraphQL schemas and PostgreSQL data models for scalable querying across distributed customer engagement touchpoints.</li>
               </ul>
             </div>
             <div class="tech-tags">
@@ -258,7 +279,7 @@
       <div class="container">
         <div class="section-header">
           <span class="section-tag">Technical Competencies</span>
-          <h2 class="section-title">Architectural Arsenal</h2>
+          <h2 class="section-title">Technical Stack & Architecture</h2>
           <p class="section-subtitle">
             Battle-tested technologies, frameworks, and engineering methodologies refined through 9 years of production systems.
           </p>
@@ -325,7 +346,6 @@
               <span class="skill-item-chip">Apache Kafka</span>
               <span class="skill-item-chip">RabbitMQ</span>
               <span class="skill-item-chip">Event-Driven Arch</span>
-              <span class="skill-item-chip">Idempotent Consumers</span>
             </div>
           </div>
 
@@ -342,7 +362,6 @@
             <div class="skill-items-list">
               <span class="skill-item-chip">PostgreSQL</span>
               <span class="skill-item-chip">Redis</span>
-              <span class="skill-item-chip">MongoDB</span>
               <span class="skill-item-chip">JPA / Hibernate</span>
               <span class="skill-item-chip">Query Optimization</span>
             </div>
@@ -415,13 +434,13 @@
                 </div>
               </div>
               <p class="card-summary">
-                Directing technical roadmaps, engineering team of 7, system architecture, and client partnerships across <strong>JuriNex</strong> (Legal SaaS) and <strong>VistaXM</strong> (Enterprise CX).
+                Directing engineering team of 7 developers, technical roadmaps, architectural blueprints, and client-facing technical strategy across <strong>JuriNex</strong> (Legal SaaS) and <strong>VistaXM</strong> (Enterprise CX).
               </p>
               <ul class="highlight-points">
-                <li>Acted as principal Java backend architect and technical team lead for end-to-end multi-tenant product delivery.</li>
-                <li>Architected full Razorpay integration handling mission-critical payment workflows, subscription tiers, and recurring billing.</li>
-                <li>Pioneered Spring Modulith adoption to enforce domain encapsulation and streamline testing cycles.</li>
-                <li>Mentored junior and senior developers through architectural whiteboarding, pairing, and strict code review gates.</li>
+                <li>Led a team of 7 engineers across multiple product deliveries, driving sprint planning, task breakdown, code velocity, and on-time milestones.</li>
+                <li>Collaborated directly with enterprise clients to translate domain workflows and business objectives into resilient technical architectures.</li>
+                <li>Maintained rigorous software reliability across both platforms through structured peer reviews, quality gates, and architecture whiteboarding.</li>
+                <li>Mentored senior and junior engineers on domain-driven design, backend engineering best practices, and career progression.</li>
               </ul>
             </div>
           </div>
@@ -440,12 +459,12 @@
                 </div>
               </div>
               <p class="card-summary">
-                Core contributor on <strong>FinOptSys</strong> (FinTech Securities Lending & Collateral Optimisation).
+                Senior backend engineering ownership on <strong>FinOptSys</strong> (P2P Financing, Securities Lending & Collateral Optimisation).
               </p>
               <ul class="highlight-points">
-                <li>Built real-time market data enrichment pipelines utilizing Apache Kafka to synchronize portfolio securities without downtime.</li>
-                <li>Engineered margin analysis service integrations protected by OAuth2 tokens for instantaneous trade feasibility assessment.</li>
-                <li>Refactored complex database query bottlenecks and tuned Redis cache layers, delivering double-digit performance gains.</li>
+                <li>Owned technical execution and integration for core trading and market security modules in high-stakes financial operations.</li>
+                <li>Optimised database queries and caching strategies across the platform, driving notable gains in platform performance.</li>
+                <li>Mentored junior developers on enterprise design principles, code quality benchmarks, and microservice integration standards.</li>
               </ul>
             </div>
           </div>
@@ -464,12 +483,12 @@
                 </div>
               </div>
               <p class="card-summary">
-                Event-driven notification infrastructure, algorithmic counterparty matching, and full-stack contributions on FinOptSys.
+                Full-lifecycle backend and full-stack engineering on <strong>FinOptSys</strong> from initial product foundation to production maturity.
               </p>
               <ul class="highlight-points">
-                <li>Engineered an event-driven email delivery service to keep financial counterparties notified of settlement changes.</li>
-                <li>Modeled trading lifecycle states using Spring State Machine for reliable workflow transitions.</li>
-                <li>Implemented matching algorithms pairing borrowers and lenders based on custom collateral parameters.</li>
+                <li>Engineered reliable backend microservices for automated user notifications and event-driven communications.</li>
+                <li>Implemented core transaction matching logic and state machine modules governing collateral trading processes.</li>
+                <li>Contributed across the full stack during initial phases, developing frontend interfaces with JavaScript, React, and Redux alongside backend APIs.</li>
               </ul>
             </div>
           </div>
@@ -488,8 +507,12 @@
                 </div>
               </div>
               <p class="card-summary">
-                Contributed to the <strong>Glencore Core Trade Project</strong>, resolving critical SonarQube architectural issues, refactoring Java code, and enhancing enterprise reliability.
+                Enterprise Java engineering on the <strong>Glencore Core Trade Project</strong> (FinTech / Commodities Trading platform).
               </p>
+              <ul class="highlight-points">
+                <li>Audited and resolved critical issues identified by SonarQube across the core trade codebase, notably improving code quality and software reliability.</li>
+                <li>Established rigorous code review discipline and clean-code refactoring practices within an enterprise commodities trading environment.</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -553,7 +576,7 @@
             <h3 class="card-title" style="font-size: 1.25rem;">B.E. Electronics & Communication</h3>
             <p class="card-role">Birla Institute of Technology, Mesra</p>
             <p class="card-summary">
-              Graduated with Honors with a <strong>CGPA of 8.84 / 10</strong>. Solid foundation in computational systems and algorithms.
+              Graduated with Honors with a <strong>CGPA of 8.84 / 10</strong>.
             </p>
           </div>
         </div>
@@ -575,7 +598,7 @@
           <div class="connect-status-wrap">
             <div class="connect-status-badge">
               <span class="status-dot-pulse"></span>
-              <span>Available for Technical Leadership, Backend Architecture & Senior Engineering roles</span>
+              <span>Available for Lead & Principal Backend Roles</span>
             </div>
           </div>
 

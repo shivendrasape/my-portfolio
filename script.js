@@ -4,6 +4,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initThemeToggle();
   initCardSpotlight();
   initMobileMenu();
   initScrollSpy();
@@ -198,4 +199,73 @@ function fallbackCopy(text) {
     showToast(`Email: ${text}`, '✉');
   }
   document.body.removeChild(textArea);
+}
+
+/**
+ * Theme Toggle Controller (Dark / Light Theme Switcher)
+ * Respects system preference, persists choice, updates meta theme-color
+ */
+function initThemeToggle() {
+  const toggleBtn = document.getElementById('themeToggleBtn');
+  const metaTheme = document.getElementById('metaThemeColor');
+
+  const getSystemTheme = () => {
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  };
+
+  const updateMetaColor = (theme) => {
+    if (metaTheme) {
+      metaTheme.setAttribute('content', theme === 'dark' ? '#060913' : '#f8fafc');
+    }
+  };
+
+  const applyTheme = (theme, showNotification = false) => {
+    document.documentElement.setAttribute('data-theme', theme);
+    try {
+      localStorage.setItem('portfolio-theme', theme);
+    } catch (e) {}
+    updateMetaColor(theme);
+
+    if (toggleBtn) {
+      const nextTheme = theme === 'dark' ? 'light' : 'dark';
+      toggleBtn.setAttribute('aria-label', `Switch to ${nextTheme} theme`);
+      toggleBtn.setAttribute('title', `Switch to ${nextTheme} theme`);
+    }
+
+    if (showNotification) {
+      showToast(`Switched to ${theme === 'dark' ? 'Dark' : 'Light'} theme`, theme === 'dark' ? '🌙' : '☀️');
+    }
+  };
+
+  // Sync initial theme
+  const activeTheme = document.documentElement.getAttribute('data-theme') || (function() {
+    try {
+      return localStorage.getItem('portfolio-theme');
+    } catch (e) {
+      return null;
+    }
+  })() || getSystemTheme();
+  
+  applyTheme(activeTheme, false);
+
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      const target = current === 'dark' ? 'light' : 'dark';
+      applyTheme(target, true);
+    });
+  }
+
+  // React to OS-level theme changes if user hasn't explicitly saved a choice
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      let saved = null;
+      try {
+        saved = localStorage.getItem('portfolio-theme');
+      } catch (err) {}
+      if (!saved) {
+        applyTheme(e.matches ? 'dark' : 'light', false);
+      }
+    });
+  }
 }
