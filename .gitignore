@@ -26,4 +26,6 @@ scratch/
 portfolio.zip
 *.docx
 *.pdf
-Shivendra_Gupta_Resume.pdf
+!assets/
+!assets/*.pdf
+/Shivendra_Gupta_Resume.pdf

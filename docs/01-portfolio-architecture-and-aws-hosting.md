@@ -46,10 +46,11 @@ flowchart TD
 As recommended in the AWS Builder Center guide *"Ship a portfolio website in 10 minutes or less"*, **AWS Amplify Hosting** provides the fastest route from code to production:
 
 ### How It Works Under the Hood
-1. **Source Code Ingestion**: Amplify accepts code either via Git repository connection or via direct ZIP/directory upload through the AWS CLI or Amplify Console.
-2. **Hosting Infrastructure**: Amplify provisions a globally distributed CDN with DDoS protection, HTTP/2 and HTTP/3 support, and automated cache management.
-3. **Custom Domains & SSL**: Amplify provisions and renews managed SSL/TLS certificates automatically when you attach a custom domain.
-4. **Instant Rollbacks**: Every deployment creates an immutable build artifact, enabling one-click instant rollbacks in the AWS Console.
+1. **Source Code Ingestion**: Amplify accepts code either via Git repository connection or via direct ZIP/directory upload through the AWS CLI or Amplify Console (`zip -r portfolio.zip index.html style.css script.js assets/`).
+2. **Hosting Infrastructure & Storage**: Amplify provisions managed internal Amazon S3 storage for immutable build artifacts and distributes them globally via Amazon CloudFront edge nodes with HTTP/2 & HTTP/3 support.
+3. **Automatic HTTPS & Free SSL Certificates**: By default, Amplify provisions a free, managed SSL/TLS certificate via AWS Certificate Manager (ACM). TLS termination is handled automatically at edge locations with zero manual certificate provisioning or renewal overhead.
+4. **Behind the Scenes Visibility**: Because Amplify is a managed PaaS, these underlying S3 buckets and CloudFront distributions are managed within the Amplify service boundary. Developers manage the application centrally in the AWS Amplify Console rather than seeing standalone resources in the S3 or CloudFront consoles.
+5. **Instant Rollbacks**: Every deployment creates an immutable build artifact, enabling one-click instant rollbacks in the AWS Console.
 
 ---
 

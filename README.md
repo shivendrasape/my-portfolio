@@ -61,6 +61,8 @@ flowchart TD
 
 ```
 my-portfolio/
+├── assets/                              # Production static assets (resume PDF, images, etc.)
+│   └── Shivendra_Gupta_Resume.pdf       # Downloadable resume
 ├── docs/                                # In-depth architectural & deployment guides
 │   ├── 01-portfolio-architecture-and-aws-hosting.md # S3, CloudFront & Amplify hosting models
 │   ├── 02-antigravity-and-aws-toolkit.md            # Antigravity IDE & AWS MCP proxy integration
@@ -102,22 +104,44 @@ Open **`http://localhost:3000`** in your browser to preview the site.
 
 ## Deployment Options
 
-### Option A: AWS Amplify Hosting (Recommended)
+### Option A: AWS Amplify Hosting (Active Live Deployment)
 
-1. **Create an Archive**:
+This is the active deployment method used for this project, inspired by the AWS Builder Center guide [*Ship a portfolio website in 10 minutes or less*](https://builder.aws.com/content/3BXiq6CzCWLJISy3LBK45t4iyRL/ship-a-portfolio-website-in-10-minutes-or-less).
+
+> [!NOTE]
+> **Active Deployment Details**:
+> - **App Name**: `shivendra-portfolio`
+> - **App ID**: `dcqzhih9h4pfm`
+> - **Production URL**: [https://dcqzhih9h4pfm.amplifyapp.com](https://dcqzhih9h4pfm.amplifyapp.com)
+> - **Manage via**: [AWS Amplify Console](https://console.aws.amazon.com/amplify) or `aws amplify list-apps`
+
+#### 1. HTTPS by Default & Free Managed SSL Certificate
+As highlighted in the AWS Builder Center guide:
+* **Automatic HTTPS**: Every Amplify app comes out of the box with HTTPS enabled by default.
+* **Free SSL Certificate**: AWS Amplify automatically provisions and manages an SSL/TLS certificate (via AWS Certificate Manager and Amazon CloudFront edge infrastructure).
+* **Zero Maintenance**: Certificate renewal, DNS validation, and TLS termination are handled completely automatically with zero ongoing maintenance or renewal fees.
+
+#### 2. Behind the Scenes: Where are S3 and CloudFront?
+* **Managed PaaS Model**: AWS Amplify Hosting is a fully managed platform. Under the hood, Amplify utilizes internal Amazon S3 storage for holding your web artifacts and Amazon CloudFront edge locations for global low-latency CDN delivery.
+* **Console Visibility**: Because AWS manages these underlying infrastructure components within the Amplify service boundary, you will **not** see an explicit S3 bucket or CloudFront distribution created in your standalone S3 (`aws s3 ls`) or CloudFront (`aws cloudfront list-distributions`) consoles. All deployments, caching, and domain configurations are managed centrally inside the AWS Amplify Console.
+* *(Note: If you want direct, granular ownership of standalone S3 buckets and CloudFront distribution IDs, see [Option B: Amazon S3 + CloudFront CDN](#option-b-amazon-s3--cloudfront-cdn) below).*
+
+#### 3. Create Archive with Assets & Deploy
+
+1. **Create the Production ZIP Archive**:
    ```bash
    zip -r portfolio.zip index.html style.css script.js assets/
    ```
    **Command Breakdown**:
-   - `zip`: The standard command-line utility used to compress files into `.zip` format.
-   - `-r` (*recursive*): Recursively traverses and packages all subdirectories and nested files (e.g., inside `assets/`).
-   - `portfolio.zip`: The name of the target output zip archive file.
-   - `index.html style.css script.js assets/`: The explicit list of production web files and asset directories to include. This ensures internal development files (such as `.git/`, `.agents/`, `docs/`, `README.md`, or IDE configs) are kept out of your production deployment bundle.
+   - `zip`: Standard CLI utility used to compress files into `.zip` format.
+   - `-r` (*recursive*): Recursively traverses and packages all subdirectories and nested files inside `assets/`.
+   - `portfolio.zip`: Output deployment archive.
+   - `index.html style.css script.js assets/`: The precise whitelist of production files to deploy. Bundling `assets/` ensures your PDF resume (`assets/Shivendra_Gupta_Resume.pdf`) and any future images/favicons are included and accessible on the live site, while keeping internal files (`.git/`, `.agents/`, `docs/`, `README.md`) out of production.
 
 2. **Deploy via AWS Amplify Console**:
    - Open the [AWS Amplify Console](https://console.aws.amazon.com/amplify).
-   - Select **Deploy without Git**, drag and drop `portfolio.zip`, and hit **Save and Deploy**.
-   - Your site is live with a global HTTPS URL in under 2 minutes.
+   - Select your existing app (`shivendra-portfolio`) or **Deploy without Git**, drag and drop `portfolio.zip`, and click **Save and Deploy**.
+   - Your site and downloadable resume are live immediately with global edge caching and HTTPS.
 
 ### Option B: Amazon S3 + CloudFront CDN
 
