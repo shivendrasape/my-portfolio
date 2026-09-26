@@ -8,21 +8,21 @@ This guide outlines the architecture of hosting a modern static portfolio websit
 
 A static portfolio website comprises HTML, CSS, JavaScript, fonts, and images. Serving these files reliably and securely to global visitors requires edge caching, TLS/SSL certificates, and low-latency storage:
 
+```mermaid
+flowchart TD
+    User["👤 Visitor Browser"] -->|"1. HTTPS Request"| DNS["🌐 Amazon Route 53 (DNS)"]
+    DNS -->|"2. Route to Nearest Edge"| CDN["⚡ Amazon CloudFront (Global CDN + SSL)"]
+
+    CDN -->|"Path A: Managed Platform"| Amplify["🚀 AWS Amplify Hosting"]
+    CDN -->|"Path B: Private Origin"| S3["🪣 Amazon S3 + Origin Access Control (OAC)"]
 ```
-[ Visitor Browser ]
-        │
-        ▼ (HTTPS / Custom Domain)
-[ Amazon Route 53 (DNS) ]
-        │
-        ▼
-[ Amazon CloudFront (Global CDN Edge Locations) ]
-   ├── Edge Caching (Gzip / Brotli compression)
-   ├── SSL/TLS via AWS Certificate Manager (ACM)
-   └── Security: Origin Access Control (OAC)
-        │
-        ▼ (Private SigV4 Request)
-[ Amazon S3 (Private Bucket) / AWS Amplify Managed Storage ]
-```
+
+| Layer | AWS Service | Purpose |
+| :--- | :--- | :--- |
+| **DNS** | Amazon Route 53 | Resolves custom domain to global edge distribution |
+| **Edge Cache & SSL** | Amazon CloudFront | Caches HTML/CSS/JS globally with automated TLS encryption |
+| **Option A (Managed)** | AWS Amplify Hosting | Zero-config deployment directly from `portfolio.zip` |
+| **Option B (IaaS)** | Amazon S3 + OAC | Private static bucket restricted strictly to CloudFront via SigV4 |
 
 ---
 

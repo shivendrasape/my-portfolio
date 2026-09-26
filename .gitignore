@@ -20,3 +20,7 @@ yarn-debug.log*
 yarn-error.log*
 *.log
 scratch/
+
+# Build & Archive Artifacts
+*.zip
+portfolio.zip

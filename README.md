@@ -7,14 +7,37 @@ A sleek, responsive, and high-performance developer portfolio website designed t
 ---
 
 ## Quick Navigation
+- [1. High-Level Architecture Overview](#1-high-level-architecture-overview)
 - [Prerequisites](#prerequisites)
 - [Project Structure](#project-structure)
-- [Local Development](#local-development)
+- [Local Development](#local-development--port-configuration)
 - [Deployment Options](#deployment-options)
   - [Option A: AWS Amplify Hosting (Recommended / 10 Minutes)](#option-a-aws-amplify-hosting-recommended)
   - [Option B: Amazon S3 + CloudFront CDN](#option-b-amazon-s3--cloudfront-cdn)
 - [Useful Commands](#useful-commands)
 - [Learning Guides (`docs/`)](#learning-guides-docs)
+
+---
+
+## 1. High-Level Architecture Overview
+
+Whether deploying via **AWS Amplify Hosting** (managed zero-config) or **Amazon S3 + CloudFront** (enterprise composable infrastructure), global visitors receive low-latency cached content served securely over HTTPS:
+
+```mermaid
+flowchart TD
+    User["👤 Visitor Browser"] -->|"1. HTTPS Request"| DNS["🌐 Amazon Route 53 (DNS)"]
+    DNS -->|"2. Route to Nearest Edge"| CDN["⚡ Amazon CloudFront (Global CDN + SSL)"]
+
+    CDN -->|"Path A: Managed Platform"| Amplify["🚀 AWS Amplify Hosting"]
+    CDN -->|"Path B: Private Origin"| S3["🪣 Amazon S3 + Origin Access Control (OAC)"]
+```
+
+| Layer | AWS Service | Purpose |
+| :--- | :--- | :--- |
+| **DNS** | Amazon Route 53 | Resolves custom domain to global edge distribution |
+| **Edge Cache & SSL** | Amazon CloudFront | Caches HTML/CSS/JS globally with automated TLS encryption |
+| **Option A (Managed)** | AWS Amplify Hosting | Zero-config deployment directly from `portfolio.zip` |
+| **Option B (IaaS)** | Amazon S3 + OAC | Private static bucket restricted strictly to CloudFront via SigV4 |
 
 ---
 
@@ -85,6 +108,12 @@ Open **`http://localhost:3000`** in your browser to preview the site.
    ```bash
    zip -r portfolio.zip index.html style.css script.js assets/
    ```
+   **Command Breakdown**:
+   - `zip`: The standard command-line utility used to compress files into `.zip` format.
+   - `-r` (*recursive*): Recursively traverses and packages all subdirectories and nested files (e.g., inside `assets/`).
+   - `portfolio.zip`: The name of the target output zip archive file.
+   - `index.html style.css script.js assets/`: The explicit list of production web files and asset directories to include. This ensures internal development files (such as `.git/`, `.agents/`, `docs/`, `README.md`, or IDE configs) are kept out of your production deployment bundle.
+
 2. **Deploy via AWS Amplify Console**:
    - Open the [AWS Amplify Console](https://console.aws.amazon.com/amplify).
    - Select **Deploy without Git**, drag and drop `portfolio.zip`, and hit **Save and Deploy**.
