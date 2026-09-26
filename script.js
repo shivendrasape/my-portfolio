@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollSpy();
   initSkillsFilter();
   initCopyEmail();
-  initContactForm();
 });
 
 /**
@@ -158,14 +157,9 @@ function showToast(message, icon = '✓') {
  * Email Clipboard Copy Handler
  */
 function initCopyEmail() {
-  const emailButtons = [
-    document.getElementById('copyEmailHeroBtn'),
-    document.getElementById('contactEmailCard')
-  ];
+  const emailButtons = document.querySelectorAll('[data-email]');
 
   emailButtons.forEach(btn => {
-    if (!btn) return;
-
     const email = btn.getAttribute('data-email') || 'gupta.shivendra13@gmail.com';
 
     const handleCopy = () => {
@@ -204,36 +198,4 @@ function fallbackCopy(text) {
     showToast(`Email: ${text}`, '✉');
   }
   document.body.removeChild(textArea);
-}
-
-/**
- * Contact Form Handler
- */
-function initContactForm() {
-  const form = document.getElementById('contactForm');
-  if (!form) return;
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const name = document.getElementById('contactName').value.trim();
-    const email = document.getElementById('contactEmail').value.trim();
-    const message = document.getElementById('contactMessage').value.trim();
-
-    if (!name || !email || !message) {
-      showToast('Please fill out all fields before sending.', '⚠');
-      return;
-    }
-
-    // Prepare mailto link as direct action
-    const mailtoSubject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
-    const mailtoBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-    const mailtoUrl = `mailto:gupta.shivendra13@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
-
-    // Open email client
-    window.location.href = mailtoUrl;
-
-    showToast('Opening your email client to dispatch the message...', '🚀');
-    form.reset();
-  });
 }
