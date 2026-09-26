@@ -24,14 +24,13 @@ A sleek, responsive, and high-performance developer portfolio website designed t
    ```bash
    aws sts get-caller-identity
    ```
-2. **`uv` Package Manager** (for running the AWS MCP proxy):
+2. **`uv` Package Manager** (only used for running the AWS MCP proxy):
    ```bash
    uv --version
    ```
-3. **Local HTTP Server** (any tool such as Python or Node):
-   ```bash
-   python3 -m http.server 3000
-   ```
+3. **Any Local Static HTTP Server** (Node, Python, or IDE extension):
+   > [!NOTE]
+   > **Pure Frontend Project**: This project is 100% static HTML5, CSS3, and vanilla JavaScript. There is **no Python backend or runtime dependency**. The Python command below is simply an optional zero-install macOS utility to serve static files locally.
 
 ---
 
@@ -55,19 +54,26 @@ my-portfolio/
 
 ---
 
-## Local Development
+## Local Development & Port Configuration
 
-Start a lightweight local server to preview your portfolio in the browser:
+Because modern browsers restrict certain local features (like CORS and ES modules) when opening raw `file:///` URLs, use any lightweight local web server to preview the site on **port 3000**:
 
 ```bash
-# Using Python 3
-python3 -m http.server 3000
+# Option 1: Using Node.js (npx serve) — specify port with -l
+npx serve . -l 3000
 
-# Or using npx serve
-npx serve .
+# Option 2: Using Node.js (http-server) — specify port with -p
+npx http-server . -p 3000
+
+# Option 3: Using Python's built-in static server (pre-installed on macOS)
+# The port number is passed as the last argument:
+python3 -m http.server 3000
 ```
 
-Open `http://localhost:3000` to preview the site.
+Open **`http://localhost:3000`** in your browser to preview the site.
+
+> [!TIP]
+> **Changing the Port**: There is no hardcoded port configuration file in this repository. To run on a different port (e.g., 8080), simply replace `3000` with your desired port number in any of the commands above (e.g., `npx serve . -l 8080` or `python3 -m http.server 8080`).
 
 ---
 
