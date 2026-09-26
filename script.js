@@ -107,7 +107,7 @@ function initCopyEmail() {
   const btnText = document.getElementById('copy-btn-text');
   if (!copyBtn || !toast) return;
 
-  const email = copyBtn.getAttribute('data-email') || 'shivendra.aws.dev@gmail.com';
+  const email = copyBtn.getAttribute('data-email') || 'gupta.shivendra13@gmail.com';
 
   copyBtn.addEventListener('click', async () => {
     try {
