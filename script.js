@@ -115,16 +115,12 @@ function initSkillsFilter() {
         const category = card.getAttribute('data-category');
         if (filter === 'all' || category === filter) {
           card.style.display = 'flex';
-          setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-          }, 20);
+          card.style.opacity = '1';
+          card.style.transform = 'none';
         } else {
+          card.style.display = 'none';
           card.style.opacity = '0';
-          card.style.transform = 'translateY(10px)';
-          setTimeout(() => {
-            card.style.display = 'none';
-          }, 250);
+          card.style.transform = 'none';
         }
       });
     });
