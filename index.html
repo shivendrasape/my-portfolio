@@ -1,337 +1,249 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="color-scheme" content="dark light">
-  <title>Shivendra Gupta | Development Lead &amp; Systems Architect</title>
-  <meta name="description" content="Portfolio of Shivendra Gupta, Development Lead &amp; Principal Backend Engineer with 9 years of experience architecting distributed systems, Java/Spring ecosystems, and Agentic AI platforms (MCP, Claude API, RAG).">
-  <meta property="og:title" content="Shivendra Gupta | Development Lead &amp; Systems Architect">
-  <meta property="og:description" content="Architecting enterprise distributed systems, Spring Modulith, Kafka messaging, and Agentic AI platforms that ship to production.">
+  <title>Shivendra Gupta | Development Lead & Principal Backend / Agentic Systems Engineer</title>
+  <meta name="description" content="Portfolio of Shivendra Gupta - Development Lead & Backend Architect with 9+ years of experience across FinTech, Legal SaaS, Enterprise CX, Java/Spring ecosystem, and Generative AI/Agentic systems.">
+  <meta name="keywords" content="Shivendra Gupta, Development Lead, Principal Backend Engineer, Java, Spring Boot, Spring Modulith, Apache Kafka, Generative AI, MCP, Model Context Protocol, AWS, FinTech">
+  <meta name="author" content="Shivendra Gupta">
+  <meta name="theme-color" content="#060913">
+
+  <!-- OpenGraph / Social Sharing -->
   <meta property="og:type" content="website">
+  <meta property="og:title" content="Shivendra Gupta | Development Lead & Backend Architect">
+  <meta property="og:description" content="9+ years building high-throughput distributed systems & Generative AI workflows across FinTech, Legal SaaS, and Enterprise CX.">
+  <meta property="og:url" content="https://shivendragupta.dev">
 
-  <!-- Anti-FOUC inline theme handler -->
-  <script>
-    (function() {
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme) {
-        document.documentElement.setAttribute('data-theme', savedTheme);
-      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-        document.documentElement.setAttribute('data-theme', 'light');
-      }
-    })();
-  </script>
-
-  <!-- Google Fonts -->
+  <!-- Modern Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Ambient Glow & Grid Canvas -->
-  <div class="ambient-glow glow-1" aria-hidden="true"></div>
-  <div class="ambient-glow glow-2" aria-hidden="true"></div>
-  <div class="grid-overlay" aria-hidden="true"></div>
+  <!-- Ambient Glassmorphism Atmosphere -->
+  <div class="ambient-background" aria-hidden="true">
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+    <div class="grid-overlay"></div>
+  </div>
 
-  <!-- Navigation Bar -->
-  <header class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="#hero" class="nav-brand" aria-label="Shivendra Gupta Homepage">
-        <span class="brand-bracket">&lt;</span>
-        <span class="brand-name">Shivendra Gupta</span>
-        <span class="brand-badge">Lead Backend &bull; AI</span>
-        <span class="brand-bracket">/&gt;</span>
+  <!-- Sticky Glass Navigation -->
+  <header class="site-header">
+    <nav class="navbar" aria-label="Main Navigation">
+      <a href="#hero" class="brand" aria-label="Shivendra Gupta Home">
+        <span class="brand-badge">SG</span>
+        <span>Shivendra Gupta</span>
       </a>
 
-      <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
-        <ul class="nav-links">
-          <li><a href="#about" class="nav-link">Principles</a></li>
-          <li><a href="#projects" class="nav-link">Systems</a></li>
-          <li><a href="#architecture" class="nav-link">System Design</a></li>
-          <li><a href="#skills" class="nav-link">Stack &amp; Credentials</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-      </nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link">Overview</a></li>
+        <li><a href="#projects" class="nav-link">Featured Systems</a></li>
+        <li><a href="#skills" class="nav-link">Tech & AI Stack</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#cloud-arch" class="nav-link">Cloud Arch</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
 
       <div class="nav-actions">
-        <!-- Theme Toggle Button -->
-        <button id="theme-toggle" class="icon-btn" aria-label="Toggle light or dark theme" title="Toggle theme">
-          <svg class="theme-icon sun-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-          </svg>
-          <svg class="theme-icon moon-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
-        </button>
-
-        <a href="Shivendra_Gupta_Resume.pdf" class="btn btn-sm btn-secondary" target="_blank" rel="noopener noreferrer" title="View &amp; Download PDF Résumé">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
-          <span>Résumé</span>
+        <a href="Shivendra_Gupta_Resume.pdf" class="btn btn-secondary btn-download" download="Shivendra_Gupta_Resume.pdf" aria-label="Download Shivendra Gupta's Resume">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          <span>CV</span>
         </a>
-
-        <!-- Mobile Menu Toggle -->
-        <button id="mobile-toggle" class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
-          <span class="hamburger-bar"></span>
-          <span class="hamburger-bar"></span>
-          <span class="hamburger-bar"></span>
+        <a href="#contact" class="btn btn-primary">Let's Talk</a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
         </button>
       </div>
-    </div>
+    </nav>
   </header>
 
-  <main id="main-content">
+  <main>
     <!-- Hero Section -->
     <section class="hero-section" id="hero">
-      <div class="container hero-container">
-        <div class="hero-badge-wrap">
-          <span class="status-indicator"></span>
-          <span class="hero-badge-text">Open to Lead Backend &amp; Agentic AI Architecture Roles</span>
+      <div class="container">
+        <div class="hero-status-pill">
+          <span class="status-ping">
+            <span class="status-ping-glow"></span>
+            <span class="status-ping-dot"></span>
+          </span>
+          <span>Available for Lead & Principal Backend Roles • Pune / Remote</span>
         </div>
 
         <h1 class="hero-title">
-          Architecting <span class="gradient-text">Enterprise Backend Systems</span> &amp; Agentic AI that Ship to Production
+          Engineering Scalable <span class="gradient-text">Distributed Systems</span> & <span class="gradient-text-purple">Agentic AI</span>
         </h1>
 
-        <p class="hero-subtitle">
-          Development Lead with <strong>9 years</strong> of hands-on mastery building scalable platforms across FinTech, Legal SaaS, and Enterprise CX. Deep expertise in the <strong>Java/Spring ecosystem</strong>, <strong>Kafka event pipelines</strong>, and the next wave: <strong>Model Context Protocol (MCP)</strong>, <strong>RAG</strong>, and <strong>Google ADK (Java)</strong>.
+        <p class="hero-description">
+          Development Lead & Principal Backend Engineer with <strong>9 years</strong> of hands-on experience architecting and shipping mission-critical systems across <strong>FinTech</strong>, <strong>Legal SaaS</strong>, and <strong>Enterprise CX</strong>. Expert in the Java/Spring ecosystem and modern Agentic AI workflows (Model Context Protocol, RAG, Claude API).
         </p>
 
         <div class="hero-cta-group">
-          <a href="#projects" class="btn btn-primary btn-lg">
-            <span>Explore My Systems</span>
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <a href="#projects" class="btn btn-primary">
+            <span>Explore Systems & Work</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
           </a>
-          <a href="Shivendra_Gupta_Resume.pdf" class="btn btn-secondary btn-lg" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span>Download Résumé</span>
-          </a>
-          <a href="https://www.linkedin.com/in/shivendra-gupta-957b49101/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg" aria-label="LinkedIn Profile">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          <button class="btn btn-outline-cyan" id="copyEmailHeroBtn" data-email="gupta.shivendra13@gmail.com">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span>Copy Email</span>
+          </button>
+          <a href="https://linkedin.com/in/shivendra-gupta-957b49101" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
             <span>LinkedIn</span>
           </a>
+          <a href="https://github.com/shivendrasape" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            <span>GitHub</span>
+          </a>
         </div>
 
-        <!-- Authentic Impact Metrics Grid -->
-        <div class="metrics-grid">
-          <div class="metric-card glass-panel">
-            <div class="metric-value">9 Years</div>
-            <div class="metric-label">Production Backend Engineering</div>
+        <!-- Bento Top Metrics Strip -->
+        <div class="hero-stats-grid" id="about">
+          <div class="stat-card">
+            <div class="stat-number">9+</div>
+            <div class="stat-label">Years Backend & Cloud Exp</div>
           </div>
-          <div class="metric-card glass-panel">
-            <div class="metric-value">7-Dev Squads</div>
-            <div class="metric-label">Led as Hands-On Tech Lead</div>
+          <div class="stat-card">
+            <div class="stat-number">7+</div>
+            <div class="stat-label">Engineers Mentored & Led</div>
           </div>
-          <div class="metric-card glass-panel">
-            <div class="metric-value">3 Domains</div>
-            <div class="metric-label">FinTech &bull; Legal SaaS &bull; Enterprise CX</div>
+          <div class="stat-card">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Production Delivery Record</div>
           </div>
-          <div class="metric-card glass-panel">
-            <div class="metric-value">Claude Certified</div>
-            <div class="metric-label">Anthropic Architect &bull; Google AI</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Engineering Philosophy Section -->
-    <section class="section about-section" id="about">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">HOW I THINK ABOUT SYSTEMS</span>
-          <h2 class="section-title">Principles I Actually Build With</h2>
-          <p class="section-subtitle">Real architectural trade-offs learned from 9 years of shipping systems under live load.</p>
-        </div>
-
-        <div class="about-grid">
-          <div class="about-card glass-panel">
-            <div class="card-icon code-icon">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-            </div>
-            <h3>Modular by Design, Not by Accident</h3>
-            <p class="philosophy-tension">&ldquo;Most backend systems break at the boundary between teams — not because code is bad, but because the architecture never enforced the boundary.&rdquo;</p>
-            <p>I architect with <strong>Spring Modulith</strong> and Domain-Driven Design so boundaries are strictly checked at compile and test time. This yields microservice-level domain autonomy with monolith-level deployment simplicity and zero multi-tenant data bleed.</p>
-          </div>
-
-          <div class="about-card glass-panel">
-            <div class="card-icon cloud-icon">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-            </div>
-            <h3>Built for What Production Actually Sends</h3>
-            <p class="philosophy-tension">&ldquo;A system that works in staging and falls apart under real Kafka lag or a burst of concurrent trades isn't ready.&rdquo;</p>
-            <p>I build <strong>asynchronous-first</strong> architectures. Whether it's Kafka consumer groups handling volatile market data, Spring State Machine deterministically governing borrow trades, or dead-letter queues isolating poison pills, I design for runtime realities.</p>
-          </div>
-
-          <div class="about-card glass-panel">
-            <div class="card-icon security-icon">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-            </div>
-            <h3>AI as Architecture, Not an API Add-On</h3>
-            <p class="philosophy-tension">&ldquo;Most teams bolt on a prompt. I design systems where intelligence is a first-class architectural component.&rdquo;</p>
-            <p>I engineer agentic systems through <strong>Model Context Protocol (MCP)</strong> servers, multi-stage RAG pipelines, Claude API, and Google ADK (Java). Agents have bounded tools, deterministic state verification, and auditability rather than unconstrained black-box executions.</p>
+          <div class="stat-card">
+            <div class="stat-number">3+</div>
+            <div class="stat-label">Enterprise Domains (FinTech/Legal)</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Flagship Systems & Platforms Section -->
-    <section class="section projects-section" id="projects">
+    <!-- Bento Grid Showcase: Key Systems & Architectures -->
+    <section id="projects">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">PRODUCTION SYSTEMS</span>
-          <h2 class="section-title">Systems I've Architected &amp; Led</h2>
-          <p class="section-subtitle">Real-world enterprise platforms across FinTech, Legal SaaS, and next-generation Agentic AI.</p>
+          <span class="section-tag">Production Architectures</span>
+          <h2 class="section-title">Engineered for Scale & Reliability</h2>
+          <p class="section-subtitle">
+            A curated showcase of production platforms, distributed microservices, and AI workflows architected and shipped.
+          </p>
         </div>
 
-        <!-- Filter Controls -->
-        <div class="filter-group" role="tablist" aria-label="System Categories">
-          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Systems</button>
-          <button class="filter-btn" data-filter="agentic" role="tab" aria-selected="false">Agentic AI</button>
-          <button class="filter-btn" data-filter="fintech" role="tab" aria-selected="false">FinTech &amp; Trading</button>
-          <button class="filter-btn" data-filter="saas" role="tab" aria-selected="false">Legal &amp; Enterprise SaaS</button>
-        </div>
-
-        <!-- Systems Grid -->
-        <div class="projects-grid" id="projects-grid">
-          
-          <!-- System 1: Agentic Engineering & MCP Suite (Differentiator - First) -->
-          <article class="project-card glass-panel featured-agentic" data-category="agentic">
-            <div class="project-header">
-              <div>
-                <span class="project-category-badge">Agentic AI &bull; MCP &bull; Anthropic</span>
-                <span class="project-role-badge">Lead Builder &bull; Active Architecture</span>
+        <div class="bento-grid">
+          <!-- Card 1: JuriNex (Lead & Architecture) - Large Span -->
+          <article class="glass-panel bento-card col-span-8 project-card">
+            <div>
+              <div class="card-badge-row">
+                <span class="card-domain-badge cyan">Legal SaaS Platform</span>
+                <span class="project-time">Sep 2025 – Present</span>
               </div>
-              <div class="project-links">
-                <a href="#architecture" class="icon-link" aria-label="View Architecture Details">
-                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-                </a>
-              </div>
-            </div>
-            <h3 class="project-title">Agentic Engineering &amp; MCP Integration Suite</h3>
-            <div class="project-impact-line">
-              The frontier of what backend engineers are building right now: autonomous agents with strict tool boundaries.
-            </div>
-            <p class="project-desc">
-              Designing and operating production agentic systems using Model Context Protocol (MCP), Claude API, and Google ADK (Java). Enables autonomous reasoning loops with strict tool execution contracts, RAG context retrieval, and SigV4 authentication across AWS and GCP infrastructure.
-            </p>
-            <div class="project-highlights">
-              <span class="highlight-item">&check; MCP Server composition &amp; tool contracts</span>
-              <span class="highlight-item">&check; Production RAG pipelines with agentic search</span>
-              <span class="highlight-item">&check; Google ADK (Java) &amp; Claude API orchestration</span>
-            </div>
-            <div class="tech-tags">
-              <span class="tech-tag">Model Context Protocol (MCP)</span>
-              <span class="tech-tag">Claude API</span>
-              <span class="tech-tag">Google ADK (Java)</span>
-              <span class="tech-tag">Spring AI</span>
-              <span class="tech-tag">AWS CDK</span>
-              <span class="tech-tag">RAG</span>
-            </div>
-          </article>
-
-          <!-- System 2: JuriNex (Legal SaaS) -->
-          <article class="project-card glass-panel" data-category="saas agentic">
-            <div class="project-header">
-              <div>
-                <span class="project-category-badge">Legal SaaS &bull; Microservices</span>
-                <span class="project-role-badge">Tech Lead &bull; Team of 7 &bull; Sep 2025 – Present</span>
-              </div>
-              <div class="project-links">
-                <a href="#contact" class="icon-link" aria-label="Contact for Case Study">
-                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                </a>
-              </div>
-            </div>
-            <h3 class="project-title">JuriNex — AI-Powered Multi-Tenant Legal SaaS</h3>
-            <div class="project-impact-line">
-              Built the revenue-enabling payment engine and core microservices for a multi-tenant legal platform from scratch.
-            </div>
-            <p class="project-desc">
-              Multi-tenant legal SaaS platform for law firms and solo practitioners with AI-powered workflows for legal research and case management. Led architecture, client technical alignment, sprint delivery, and hands-on backend development across Java microservices.
-            </p>
-            <div class="project-highlights">
-              <span class="highlight-item">&check; Razorpay billing cycles &amp; subscription engine</span>
-              <span class="highlight-item">&check; Scalable multi-tenant data isolation</span>
-              <span class="highlight-item">&check; AI-assisted legal research &amp; document pipelines</span>
+              <h3 class="card-title">JuriNex — Multi-Tenant Legal SaaS Platform</h3>
+              <p class="card-role">Development Lead & Primary Java Backend Engineer</p>
+              <p class="card-summary">
+                Scalable multi-tenant SaaS platform built for law firms and solo practitioners, incorporating automated AI-powered workflows for legal research, client onboarding, and document management.
+              </p>
+              <ul class="highlight-points">
+                <li>Led a cross-functional engineering team of 7 developers, driving architectural blueprints, sprint planning, and structured code reviews.</li>
+                <li>Architected resilient Java microservices with clean data models and RESTful APIs capable of isolated multi-tenant operations.</li>
+                <li>Integrated Razorpay payment gateway from ground up for automated subscription lifecycle management, billing cycles, and secure checkout processing.</li>
+                <li>Collaborated directly with enterprise clients to translate domain legal workflows into robust technical architectures.</li>
+              </ul>
             </div>
             <div class="tech-tags">
               <span class="tech-tag">Java</span>
               <span class="tech-tag">Spring Boot</span>
               <span class="tech-tag">PostgreSQL</span>
               <span class="tech-tag">RabbitMQ</span>
-              <span class="tech-tag">GCP</span>
+              <span class="tech-tag">Google Cloud (GCP)</span>
               <span class="tech-tag">Razorpay</span>
+              <span class="tech-tag">Multi-Tenancy</span>
             </div>
           </article>
 
-          <!-- System 3: FinOptSys (FinTech) -->
-          <article class="project-card glass-panel" data-category="fintech">
-            <div class="project-header">
-              <div>
-                <span class="project-category-badge">FinTech &bull; Securities Lending</span>
-                <span class="project-role-badge">Senior Backend Engineer &bull; 4.5 Years</span>
+          <!-- Card 2: AI & Agentic Systems Spotlight -->
+          <article class="glass-panel bento-card col-span-4 project-card ai-interactive-card">
+            <div>
+              <div class="card-badge-row">
+                <span class="card-domain-badge purple">Agentic Systems & GenAI</span>
+                <span class="project-time">2024 – Present</span>
               </div>
-              <div class="project-links">
-                <a href="#contact" class="icon-link" aria-label="Details via Contact">
-                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                </a>
+              <h3 class="card-title">Generative AI & Agentic Toolkits</h3>
+              <p class="card-role" style="color: #c084fc;">Agentic Architecture & Integrations</p>
+              <p class="card-summary">
+                Engineering intelligent context-aware applications by leveraging LLM tool-calling, agentic orchestration, and structured knowledge retrieval.
+              </p>
+              <div class="mcp-pill-row">
+                <span class="mcp-pill">⚡ Model Context Protocol (MCP)</span>
+                <span class="mcp-pill">🔍 Agentic RAG</span>
+                <span class="mcp-pill">🤖 Claude API</span>
+                <span class="mcp-pill">☕ Spring AI</span>
+                <span class="mcp-pill">🛠 Google ADK (Java)</span>
               </div>
+              <ul class="highlight-points">
+                <li>Production implementation of MCP server bridges for IDE & cloud automation.</li>
+                <li>Structured semantic search and retrieval-augmented generation pipelines.</li>
+                <li>Anthropic Claude Certified Architect (Foundations).</li>
+              </ul>
             </div>
-            <h3 class="project-title">FinOptSys — Securities Lending &amp; Collateral Optimization</h3>
-            <div class="project-impact-line">
-              High-throughput financial infrastructure where data errors cost capital and latency costs trades.
+            <div class="tech-tags">
+              <span class="tech-tag">MCP</span>
+              <span class="tech-tag">Spring AI</span>
+              <span class="tech-tag">Claude 3.5 Sonnet</span>
+              <span class="tech-tag">Vector RAG</span>
             </div>
-            <p class="project-desc">
-              P2P financing and collateral optimization platform. Architected the market security data enrichment pipeline via Kafka to drastically reduce portfolio errors, implemented OAuth2 margin analysis, and engineered borrow trade workflows using Spring State Machine.
-            </p>
-            <div class="project-highlights">
-              <span class="highlight-item">&check; Real-time Kafka market security data ingestion</span>
-              <span class="highlight-item">&check; Spring State Machine trade borrow lifecycle</span>
-              <span class="highlight-item">&check; Counterparty matching algorithms for trade speed</span>
+          </article>
+
+          <!-- Card 3: FinOptSys P2P Financing -->
+          <article class="glass-panel bento-card col-span-6 project-card">
+            <div>
+              <div class="card-badge-row">
+                <span class="card-domain-badge emerald">FinTech & Securities</span>
+                <span class="project-time">Aug 2019 – Apr 2024</span>
+              </div>
+              <h3 class="card-title">FinOptSys — Securities Lending & Collateral Optimisation</h3>
+              <p class="card-role">Software Engineer I3 / I2 / I1</p>
+              <p class="card-summary">
+                High-frequency platform for peer-to-peer financing, collateral matching, and regulatory securities lending transactions.
+              </p>
+              <ul class="highlight-points">
+                <li>Streamed and enriched high-volume portfolio documents with live market security data integrated via Apache Kafka, slashing data discrepancies.</li>
+                <li>Engineered margin analysis modules secured with OAuth2 microservice communication for instant trade feasibility decisions.</li>
+                <li>Built automated event-driven notification infrastructure and implemented stateful borrow-trade pipelines using Spring State Machine.</li>
+                <li>Devised optimized counterparty matching algorithms, drastically improving trade execution speed and collateral utilization.</li>
+              </ul>
             </div>
             <div class="tech-tags">
               <span class="tech-tag">Java</span>
               <span class="tech-tag">Spring Boot</span>
               <span class="tech-tag">Apache Kafka</span>
-              <span class="tech-tag">Spring State Machine</span>
               <span class="tech-tag">OAuth2</span>
+              <span class="tech-tag">Spring State Machine</span>
               <span class="tech-tag">GraphQL</span>
+              <span class="tech-tag">Redis</span>
             </div>
           </article>
 
-          <!-- System 4: VistaXM (Enterprise CX) -->
-          <article class="project-card glass-panel" data-category="saas">
-            <div class="project-header">
-              <div>
-                <span class="project-category-badge">Enterprise CX &bull; Spring Modulith</span>
-                <span class="project-role-badge">Hands-on Tech Lead &bull; Team of 7 &bull; May 2024 – Sep 2025</span>
+          <!-- Card 4: VistaXM Enterprise CX -->
+          <article class="glass-panel bento-card col-span-6 project-card">
+            <div>
+              <div class="card-badge-row">
+                <span class="card-domain-badge cyan">Enterprise CX SaaS</span>
+                <span class="project-time">May 2024 – Sep 2025</span>
               </div>
-              <div class="project-links">
-                <a href="#contact" class="icon-link" aria-label="Details via Contact">
-                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                </a>
-              </div>
-            </div>
-            <h3 class="project-title">VistaXM — Modular Enterprise Customer Experience Platform</h3>
-            <div class="project-impact-line">
-              Replaced fragile monolith sprawl with Spring Modulith bounded domains and enterprise RBAC.
-            </div>
-            <p class="project-desc">
-              CX-as-a-service solution helping B2B enterprises increase conversion and curb customer churn. Architected core backend modules using Spring Modulith to enforce clear domain boundaries, and designed a granular Spring Security authorization layer with GraphQL APIs.
-            </p>
-            <div class="project-highlights">
-              <span class="highlight-item">&check; Spring Modulith architectural boundary enforcement</span>
-              <span class="highlight-item">&check; Enterprise-grade Spring Security RBAC authorization</span>
-              <span class="highlight-item">&check; High-performance GraphQL querying &amp; resolvers</span>
+              <h3 class="card-title">VistaXM — Customer Experience Platform</h3>
+              <p class="card-role">Hands-on Tech Lead & Primary Backend Engineer</p>
+              <p class="card-summary">
+                B2B CX-as-a-service ecosystem engineered to boost customer conversion, accelerate expansion, and curtail user churn across enterprise touchpoints.
+              </p>
+              <ul class="highlight-points">
+                <li>Designed clean architectural boundaries using Spring Modulith, ensuring modular cohesion and strict domain separation without microservice sprawl.</li>
+                <li>Implemented enterprise-grade Role-Based Access Control (RBAC) and granular data-level authorization using Spring Security.</li>
+                <li>Orchestrated development sprints for 7 engineers, driving high code velocity while strictly maintaining architectural integrity.</li>
+              </ul>
             </div>
             <div class="tech-tags">
               <span class="tech-tag">Java</span>
@@ -339,263 +251,423 @@
               <span class="tech-tag">Spring Modulith</span>
               <span class="tech-tag">Spring Security</span>
               <span class="tech-tag">GraphQL</span>
+              <span class="tech-tag">PostgreSQL</span>
             </div>
           </article>
-
-          <!-- System 5: Glencore Core Trade (FinTech Commodity Trading) -->
-          <article class="project-card glass-panel" data-category="fintech">
-            <div class="project-header">
-              <div>
-                <span class="project-category-badge">FinTech &bull; Commodity Trading</span>
-                <span class="project-role-badge">Associate Technology &bull; Publicis Sapient &bull; 2017 – 2019</span>
-              </div>
-              <div class="project-links">
-                <a href="#contact" class="icon-link" aria-label="Details via Contact">
-                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                </a>
-              </div>
-            </div>
-            <h3 class="project-title">Glencore Core Trade — High-Throughput Trading Engine</h3>
-            <div class="project-impact-line">
-              Critical commodity trading workflows where code quality directly drove system reliability.
-            </div>
-            <p class="project-desc">
-              Contributed to high-throughput commodity trade processing systems for Glencore. Systematically remediated critical SonarQube issues across the core trade codebase, improving software reliability and data integrity across Java microservices and MongoDB stores.
-            </p>
-            <div class="project-highlights">
-              <span class="highlight-item">&check; SonarQube quality gates &amp; reliability engineering</span>
-              <span class="highlight-item">&check; High-throughput trade processing pipelines</span>
-              <span class="highlight-item">&check; Full-stack Java backend + MongoDB + React UI</span>
-            </div>
-            <div class="tech-tags">
-              <span class="tech-tag">Java</span>
-              <span class="tech-tag">MongoDB</span>
-              <span class="tech-tag">GraphQL</span>
-              <span class="tech-tag">SonarQube</span>
-              <span class="tech-tag">React JS</span>
-            </div>
-          </article>
-
         </div>
       </div>
     </section>
 
-    <!-- System Architecture Blueprint Section -->
-    <section class="section architecture-section" id="architecture">
+    <!-- Interactive Skills & Technology Matrix -->
+    <section id="skills">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">SYSTEM DESIGN APPROACH</span>
-          <h2 class="section-title">How I Take a System from Concept to Production</h2>
-          <p class="section-subtitle">The same architectural mental model applied across every high-stakes platform I've built.</p>
+          <span class="section-tag">Technical Competencies</span>
+          <h2 class="section-title">Architectural Arsenal</h2>
+          <p class="section-subtitle">
+            Battle-tested technologies, frameworks, and engineering methodologies refined through 9 years of production systems.
+          </p>
         </div>
 
-        <div class="pipeline-container glass-panel">
-          <div class="pipeline-step">
-            <div class="step-num">01</div>
-            <div class="step-content">
-              <h4>Define Boundaries First</h4>
-              <p>Monoliths fail when boundaries blur. I enforce strict domain contexts using Spring Modulith, domain-driven design, and multi-tenant schema isolation before writing service logic.</p>
-              <code>@ApplicationModule &bull; Bounded Contexts</code>
-            </div>
-          </div>
-
-          <div class="pipeline-connector">
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </div>
-
-          <div class="pipeline-step">
-            <div class="step-num">02</div>
-            <div class="step-content">
-              <h4>Design for Asynchronous Flow</h4>
-              <p>The UI is just a client; resilience happens in the stream. Event-driven pipelines via Kafka and RabbitMQ with Spring State Machine deterministically manage state and absorb spikes.</p>
-              <code>Kafka Consumer Groups &bull; State Machine</code>
-            </div>
-          </div>
-
-          <div class="pipeline-connector">
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </div>
-
-          <div class="pipeline-step">
-            <div class="step-num">03</div>
-            <div class="step-content">
-              <h4>Layer Intelligence &amp; Cloud Delivery</h4>
-              <p>Augment backend services with Model Context Protocol (MCP) tool execution and RAG retrieval. Deploy with automated CI/CD and SonarQube quality gates on AWS/GCP.</p>
-              <code>MCP Tools &bull; RAG &bull; Cloud CD</code>
-            </div>
-          </div>
+        <div class="skills-controls" role="tablist" aria-label="Skills Filter">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Domains</button>
+          <button class="filter-btn" data-filter="ai" role="tab" aria-selected="false">GenAI & Agentic</button>
+          <button class="filter-btn" data-filter="backend" role="tab" aria-selected="false">Backend & Core Java</button>
+          <button class="filter-btn" data-filter="messaging" role="tab" aria-selected="false">Messaging & Data</button>
+          <button class="filter-btn" data-filter="cloud" role="tab" aria-selected="false">Cloud & Architecture</button>
         </div>
 
-        <div class="architecture-cta">
-          <a href="#contact" class="btn btn-secondary">
-            Discuss a System Architecture or Lead Role &rarr;
-          </a>
+        <div class="skills-grid" id="skillsGrid">
+          <!-- Skill: GenAI & Agentic -->
+          <div class="skill-card" data-category="ai">
+            <div class="skill-header">
+              <div class="skill-icon-box purple">✦</div>
+              <div>
+                <h3 class="skill-title">Agentic Workflows & MCP</h3>
+                <span class="skill-category">Generative AI</span>
+              </div>
+            </div>
+            <p class="skill-description">Model Context Protocol server/client bridges, tool calling, multi-agent coordination, and contextual system integration.</p>
+            <div class="skill-items-list">
+              <span class="skill-item-chip">MCP Standard</span>
+              <span class="skill-item-chip">Claude API</span>
+              <span class="skill-item-chip">Agentic Search</span>
+              <span class="skill-item-chip">Google ADK</span>
+            </div>
+          </div>
+
+          <!-- Skill: Spring & Java Core -->
+          <div class="skill-card" data-category="backend">
+            <div class="skill-header">
+              <div class="skill-icon-box cyan">☕</div>
+              <div>
+                <h3 class="skill-title">Java & Spring Ecosystem</h3>
+                <span class="skill-category">Core Backend</span>
+              </div>
+            </div>
+            <p class="skill-description">Deep expertise building high-throughput microservices, domain-driven designs, and modular architectures.</p>
+            <div class="skill-items-list">
+              <span class="skill-item-chip">Java 17/21</span>
+              <span class="skill-item-chip">Spring Boot</span>
+              <span class="skill-item-chip">Spring Modulith</span>
+              <span class="skill-item-chip">Spring Security</span>
+              <span class="skill-item-chip">Spring AI</span>
+              <span class="skill-item-chip">Spring State Machine</span>
+            </div>
+          </div>
+
+          <!-- Skill: Messaging & Event Streaming -->
+          <div class="skill-card" data-category="messaging">
+            <div class="skill-header">
+              <div class="skill-icon-box emerald">⇄</div>
+              <div>
+                <h3 class="skill-title">Event Streaming & Brokers</h3>
+                <span class="skill-category">Distributed Systems</span>
+              </div>
+            </div>
+            <p class="skill-description">Asynchronous event-driven messaging, transaction enrichment, and decoupled microservices pipelines.</p>
+            <div class="skill-items-list">
+              <span class="skill-item-chip">Apache Kafka</span>
+              <span class="skill-item-chip">RabbitMQ</span>
+              <span class="skill-item-chip">Event-Driven Arch</span>
+              <span class="skill-item-chip">Idempotent Consumers</span>
+            </div>
+          </div>
+
+          <!-- Skill: Databases & Caching -->
+          <div class="skill-card" data-category="messaging">
+            <div class="skill-header">
+              <div class="skill-icon-box amber">⛁</div>
+              <div>
+                <h3 class="skill-title">Databases & Caching</h3>
+                <span class="skill-category">Data Tier</span>
+              </div>
+            </div>
+            <p class="skill-description">Data modeling, query optimization, indexing strategies, and high-performance in-memory caching.</p>
+            <div class="skill-items-list">
+              <span class="skill-item-chip">PostgreSQL</span>
+              <span class="skill-item-chip">Redis</span>
+              <span class="skill-item-chip">MongoDB</span>
+              <span class="skill-item-chip">JPA / Hibernate</span>
+              <span class="skill-item-chip">Query Optimization</span>
+            </div>
+          </div>
+
+          <!-- Skill: Cloud & DevOps -->
+          <div class="skill-card" data-category="cloud">
+            <div class="skill-header">
+              <div class="skill-icon-box cyan">☁</div>
+              <div>
+                <h3 class="skill-title">Cloud Infrastructure</h3>
+                <span class="skill-category">Cloud & DevOps</span>
+              </div>
+            </div>
+            <p class="skill-description">Production cloud deployments, container orchestration, serverless microservices, and CDN acceleration.</p>
+            <div class="skill-items-list">
+              <span class="skill-item-chip">Amazon AWS</span>
+              <span class="skill-item-chip">Google Cloud (GCP)</span>
+              <span class="skill-item-chip">Docker</span>
+              <span class="skill-item-chip">CloudFront / S3</span>
+              <span class="skill-item-chip">Amplify Hosting</span>
+            </div>
+          </div>
+
+          <!-- Skill: Architecture & Practices -->
+          <div class="skill-card" data-category="backend">
+            <div class="skill-header">
+              <div class="skill-icon-box purple">⛯</div>
+              <div>
+                <h3 class="skill-title">System Design & Practices</h3>
+                <span class="skill-category">Engineering Leadership</span>
+              </div>
+            </div>
+            <p class="skill-description">Technical mentorship, domain-driven design, REST & GraphQL APIs, secure billing integrations, and quality gates.</p>
+            <div class="skill-items-list">
+              <span class="skill-item-chip">Domain-Driven Design</span>
+              <span class="skill-item-chip">GraphQL / REST</span>
+              <span class="skill-item-chip">OAuth2 / RBAC</span>
+              <span class="skill-item-chip">SonarQube</span>
+              <span class="skill-item-chip">Razorpay Gateway</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Technical Stack & Credentials Section -->
-    <section class="section skills-section" id="skills">
+    <!-- Career Experience Timeline -->
+    <section id="experience">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">TECHNICAL STACK</span>
-          <h2 class="section-title">Tools I Work With Deeply</h2>
-          <p class="section-subtitle">Nine years of battle-tested enterprise tools paired with current-frontier agentic AI.</p>
+          <span class="section-tag">Career Trajectory</span>
+          <h2 class="section-title">9 Years of Engineering Impact</h2>
+          <p class="section-subtitle">
+            Demonstrated growth from associate engineer to development lead and principal backend architect.
+          </p>
         </div>
 
-        <div class="skills-grid">
-          <!-- Pillar 1: Generative AI & Agentic Systems (Top Differentiator) -->
-          <div class="skill-category glass-panel">
-            <h3 class="category-title">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-              <span>Generative AI &amp; Agentic Systems</span>
-            </h3>
-            <ul class="skill-list">
-              <li>Model Context Protocol (MCP) Architecture</li>
-              <li>Claude API &amp; Anthropic SDK</li>
-              <li>Google ADK (Java) &amp; Gemini Workflows</li>
-              <li>RAG (Retrieval-Augmented Generation) &amp; Search</li>
-              <li>Spring AI Integration &amp; Prompt Engineering</li>
-              <li>Autonomous Multi-Agent Tool Orchestration</li>
-            </ul>
-          </div>
-
-          <!-- Pillar 2: Backend & Enterprise Java -->
-          <div class="skill-category glass-panel">
-            <h3 class="category-title">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-              <span>Backend &amp; Enterprise Java</span>
-            </h3>
-            <ul class="skill-list">
-              <li>Java (8, 11, 17, 21+) Ecosystem</li>
-              <li>Spring Boot &amp; Microservices Architecture</li>
-              <li>Spring Modulith (Module Boundaries)</li>
-              <li>Spring Security &amp; RBAC Authorization</li>
-              <li>Spring State Machine (Deterministic Workflows)</li>
-              <li>JPA, Hibernate &amp; GraphQL Query Resolvers</li>
-            </ul>
-          </div>
-
-          <!-- Pillar 3: Distributed Messaging & Storage -->
-          <div class="skill-category glass-panel">
-            <h3 class="category-title">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-              <span>Distributed Messaging &amp; Storage</span>
-            </h3>
-            <ul class="skill-list">
-              <li>Apache Kafka (Event Streams &amp; Consumer Groups)</li>
-              <li>RabbitMQ (AMQP Exchange &amp; Routing)</li>
-              <li>PostgreSQL (Multi-Tenant Relational Modeling)</li>
-              <li>Redis (Distributed Caching &amp; Pub/Sub)</li>
-              <li>MongoDB (Document Persistence)</li>
-              <li>Query Optimization, Indexing &amp; Connection Pools</li>
-            </ul>
-          </div>
-
-          <!-- Pillar 4: Cloud, DevOps & Engineering Practices -->
-          <div class="skill-category glass-panel">
-            <h3 class="category-title">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
-              <span>Cloud, DevOps &amp; Leadership</span>
-            </h3>
-            <ul class="skill-list">
-              <li>AWS (S3, CloudFront, Amplify, SNS/SQS, CDK)</li>
-              <li>Google Cloud Platform (GCP) &amp; Docker</li>
-              <li>OAuth2, JWT &amp; Razorpay Payment Integrations</li>
-              <li>SonarQube Static Analysis &amp; Quality Gates</li>
-              <li>Domain-Driven Design (DDD) &amp; System Design</li>
-              <li>Tech Leadership, Sprint Planning &amp; Mentoring</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Integrated Credentials & Certifications Strip -->
-        <div class="credentials-section">
-          <div class="credentials-header">
-            <h3 class="credentials-title">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
-              <span>Industry Certifications &amp; Accreditations</span>
-            </h3>
-          </div>
-
-          <div class="credentials-grid">
-            <div class="credential-card glass-panel">
-              <div class="credential-icon anthropic-icon">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        <div class="timeline">
+          <!-- Item 1: Development Lead -->
+          <div class="timeline-item">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="glass-panel timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="role-title">Development Lead</h3>
+                  <div class="company-name">Talentica Software • Pune, India</div>
+                </div>
+                <div class="timeline-meta">
+                  <span>May 2024 – Present</span>
+                </div>
               </div>
-              <div class="credential-info">
-                <h4>Claude Certified Architect – Foundations</h4>
-                <p>Anthropic &bull; Verified Credential</p>
-              </div>
-            </div>
-
-            <div class="credential-card glass-panel">
-              <div class="credential-icon">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              </div>
-              <div class="credential-info">
-                <h4>Google AI Essentials</h4>
-                <p>Google &bull; Aug 2024</p>
-              </div>
+              <p class="card-summary">
+                Directing technical roadmaps, engineering team of 7, system architecture, and client partnerships across <strong>JuriNex</strong> (Legal SaaS) and <strong>VistaXM</strong> (Enterprise CX).
+              </p>
+              <ul class="highlight-points">
+                <li>Acted as principal Java backend architect and technical team lead for end-to-end multi-tenant product delivery.</li>
+                <li>Architected full Razorpay integration handling mission-critical payment workflows, subscription tiers, and recurring billing.</li>
+                <li>Pioneered Spring Modulith adoption to enforce domain encapsulation and streamline testing cycles.</li>
+                <li>Mentored junior and senior developers through architectural whiteboarding, pairing, and strict code review gates.</li>
+              </ul>
             </div>
           </div>
 
-          <!-- Academic Foundation Footnote Banner -->
-          <div class="education-banner glass-panel">
-            <div class="education-left">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-              <div>
-                <div class="education-title">Birla Institute of Technology (BIT), Mesra</div>
-                <div class="education-sub">Bachelor of Engineering (B.E.), Electronics &amp; Communications &bull; Class of 2013 – 2017</div>
+          <!-- Item 2: Software Engineer I3 -->
+          <div class="timeline-item">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="glass-panel timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="role-title">Software Engineer I3</h3>
+                  <div class="company-name">Talentica Software • Pune, India</div>
+                </div>
+                <div class="timeline-meta">
+                  <span>Dec 2021 – Apr 2024</span>
+                </div>
               </div>
+              <p class="card-summary">
+                Core contributor on <strong>FinOptSys</strong> (FinTech Securities Lending & Collateral Optimisation).
+              </p>
+              <ul class="highlight-points">
+                <li>Built real-time market data enrichment pipelines utilizing Apache Kafka to synchronize portfolio securities without downtime.</li>
+                <li>Engineered margin analysis service integrations protected by OAuth2 tokens for instantaneous trade feasibility assessment.</li>
+                <li>Refactored complex database query bottlenecks and tuned Redis cache layers, delivering double-digit performance gains.</li>
+              </ul>
             </div>
-            <div class="education-score">CGPA: 8.84 / 10</div>
+          </div>
+
+          <!-- Item 3: Software Engineer I2 & I1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="glass-panel timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="role-title">Software Engineer I2 & I1</h3>
+                  <div class="company-name">Talentica Software • Pune, India</div>
+                </div>
+                <div class="timeline-meta">
+                  <span>Aug 2019 – Dec 2021</span>
+                </div>
+              </div>
+              <p class="card-summary">
+                Event-driven notification infrastructure, algorithmic counterparty matching, and full-stack contributions on FinOptSys.
+              </p>
+              <ul class="highlight-points">
+                <li>Engineered an event-driven email delivery service to keep financial counterparties notified of settlement changes.</li>
+                <li>Modeled trading lifecycle states using Spring State Machine for reliable workflow transitions.</li>
+                <li>Implemented matching algorithms pairing borrowers and lenders based on custom collateral parameters.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Item 4: Publicis Sapient -->
+          <div class="timeline-item">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="glass-panel timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="role-title">Associate Technology</h3>
+                  <div class="company-name">Publicis Sapient • Gurgaon, India</div>
+                </div>
+                <div class="timeline-meta">
+                  <span>Oct 2017 – Aug 2019</span>
+                </div>
+              </div>
+              <p class="card-summary">
+                Contributed to the <strong>Glencore Core Trade Project</strong>, resolving critical SonarQube architectural issues, refactoring Java code, and enhancing enterprise reliability.
+              </p>
+            </div>
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- Contact & Engineering Action Section -->
-    <section class="section contact-section" id="contact">
+    <!-- Education & Certifications Bento -->
+    <section>
       <div class="container">
-        <div class="contact-box glass-panel">
-          <div class="contact-header">
-            <span class="section-tag">GET IN TOUCH</span>
-            <h2 class="contact-title">Let's Build Something Worth Talking About</h2>
-            <p class="contact-desc">
-              Whether you're exploring Lead Backend roles, system architecture consulting, or integrating Agentic AI workflows into production — I'm interested in conversations where the technical problems are genuinely hard.
+        <div class="section-header">
+          <span class="section-tag">Credentials</span>
+          <h2 class="section-title">Education & Certifications</h2>
+        </div>
+
+        <div class="bento-grid">
+          <!-- Certification 1 -->
+          <div class="glass-panel bento-card col-span-4">
+            <div class="card-badge-row">
+              <span class="card-domain-badge purple">Anthropic</span>
+              <span class="project-time">Sep 2026</span>
+            </div>
+            <h3 class="card-title" style="font-size: 1.25rem;">Claude Certified Architect</h3>
+            <p class="card-role" style="color: #c084fc;">Foundations Certification</p>
+            <p class="card-summary">
+              Validated expertise in architecting scalable solutions with Claude models, prompt caching, tool use, and agentic workflows.
             </p>
           </div>
 
-          <div class="contact-actions">
-            <!-- Copy Email Button -->
-            <button id="copy-email-btn" class="btn btn-primary btn-lg" data-email="gupta.shivendra13@gmail.com" title="Copy email address to clipboard">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-              <span id="copy-btn-text">Copy Email Address</span>
-            </button>
-
-            <!-- LinkedIn Profile -->
-            <a href="https://www.linkedin.com/in/shivendra-gupta-957b49101/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg" aria-label="LinkedIn Profile">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-              <span>LinkedIn</span>
-            </a>
-
-            <!-- GitHub Profile -->
-            <a href="https://github.com/shivendrasape" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg" aria-label="GitHub Profile">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-              <span>GitHub</span>
-            </a>
-
-            <!-- Download Résumé -->
-            <a href="Shivendra_Gupta_Resume.pdf" class="btn btn-secondary btn-lg" target="_blank" rel="noopener noreferrer" aria-label="Download Résumé PDF">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
-              <span>Download Résumé</span>
-            </a>
+          <!-- Certification 2 -->
+          <div class="glass-panel bento-card col-span-4">
+            <div class="card-badge-row">
+              <span class="card-domain-badge cyan">Google</span>
+              <span class="project-time">Aug 2024</span>
+            </div>
+            <h3 class="card-title" style="font-size: 1.25rem;">Google AI Essentials</h3>
+            <p class="card-role">Foundational AI Specialization</p>
+            <p class="card-summary">
+              Practical grounding in modern generative AI principles, ethics, and production integration practices.
+            </p>
           </div>
 
-          <div class="feedback-toast" id="feedback-toast" role="status" aria-live="polite">
-            Email copied to clipboard! (gupta.shivendra13@gmail.com)
+          <!-- Education -->
+          <div class="glass-panel bento-card col-span-4">
+            <div class="card-badge-row">
+              <span class="card-domain-badge emerald">BIT Mesra</span>
+              <span class="project-time">2013 – 2017</span>
+            </div>
+            <h3 class="card-title" style="font-size: 1.25rem;">B.E. Electronics & Communication</h3>
+            <p class="card-role">Birla Institute of Technology, Mesra</p>
+            <p class="card-summary">
+              Graduated with Honors with a <strong>CGPA of 8.84 / 10</strong>. Solid foundation in computational systems and algorithms.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cloud Hosting Architecture Spotlight -->
+    <section id="cloud-arch">
+      <div class="container">
+        <div class="aws-architecture-box">
+          <div class="section-header" style="margin-bottom: 24px;">
+            <span class="section-tag" style="background: rgba(56, 189, 248, 0.1); border-color: rgba(56, 189, 248, 0.3);">AWS Cloud Architecture</span>
+            <h2 class="section-title">Zero-Latency Cloud Infrastructure</h2>
+            <p class="section-subtitle">
+              How this portfolio is deployed on AWS following enterprise well-architected practices.
+            </p>
+          </div>
+
+          <div class="arch-flow-grid">
+            <div class="arch-node">
+              <div class="arch-node-title">1. AWS Amplify / S3</div>
+              <div class="arch-node-desc">Static content hosted with Origin Access Control (OAC)</div>
+            </div>
+            <div class="arch-node">
+              <div class="arch-node-title">2. Amazon CloudFront</div>
+              <div class="arch-node-desc">Global Edge CDN with HTTP/3 & TLS 1.3 caching</div>
+            </div>
+            <div class="arch-node">
+              <div class="arch-node-title">3. Route 53 DNS</div>
+              <div class="arch-node-desc">Ultra-low latency anycast routing with SSL/TLS auto-renew</div>
+            </div>
+            <div class="arch-node">
+              <div class="arch-node-title">4. AWS MCP Toolkit</div>
+              <div class="arch-node-desc">CI/CD automation verified via Antigravity Agent tools</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Let's Connect</span>
+          <h2 class="section-title">Start a Conversation</h2>
+          <p class="section-subtitle">
+            Whether you are looking for a Development Lead, Backend Architect, or discussing Agentic AI systems — I'd love to connect.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Direct Details -->
+          <div class="glass-panel" style="padding: 32px;">
+            <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 8px;">Direct Channels</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">
+              Reach out directly or schedule a technical discussion.
+            </p>
+
+            <div class="contact-info-list">
+              <div class="contact-info-card" id="contactEmailCard" role="button" tabindex="0" title="Click to copy email">
+                <div class="contact-icon">✉</div>
+                <div>
+                  <div style="font-size: 0.78rem; color: var(--text-dim); text-transform: uppercase;">Email</div>
+                  <div style="font-weight: 600; font-family: var(--font-mono); font-size: 0.9rem;">gupta.shivendra13@gmail.com</div>
+                </div>
+              </div>
+
+              <a href="tel:+918292992509" class="contact-info-card">
+                <div class="contact-icon">✆</div>
+                <div>
+                  <div style="font-size: 0.78rem; color: var(--text-dim); text-transform: uppercase;">Phone / WhatsApp</div>
+                  <div style="font-weight: 600; font-family: var(--font-mono); font-size: 0.9rem;">+91-8292992509</div>
+                </div>
+              </a>
+
+              <a href="https://linkedin.com/in/shivendra-gupta-957b49101" target="_blank" rel="noopener noreferrer" class="contact-info-card">
+                <div class="contact-icon">in</div>
+                <div>
+                  <div style="font-size: 0.78rem; color: var(--text-dim); text-transform: uppercase;">LinkedIn</div>
+                  <div style="font-weight: 600; font-size: 0.9rem;">linkedin.com/in/shivendra-gupta-957b49101</div>
+                </div>
+              </a>
+
+              <a href="https://github.com/shivendrasape" target="_blank" rel="noopener noreferrer" class="contact-info-card">
+                <div class="contact-icon">git</div>
+                <div>
+                  <div style="font-size: 0.78rem; color: var(--text-dim); text-transform: uppercase;">GitHub</div>
+                  <div style="font-weight: 600; font-size: 0.9rem;">github.com/shivendrasape</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="glass-panel" style="padding: 32px;">
+            <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 8px;">Send a Direct Message</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px;">
+              Leave a note and I will reply within 24 hours.
+            </p>
+
+            <form id="contactForm" novalidate>
+              <div class="contact-form-group">
+                <label for="contactName" class="form-label">Your Name</label>
+                <input type="text" id="contactName" class="form-control" placeholder="Jane Doe" required>
+              </div>
+
+              <div class="contact-form-group">
+                <label for="contactEmail" class="form-label">Your Email</label>
+                <input type="email" id="contactEmail" class="form-control" placeholder="jane@example.com" required>
+              </div>
+
+              <div class="contact-form-group">
+                <label for="contactMessage" class="form-label">Message / Role Details</label>
+                <textarea id="contactMessage" class="form-control" placeholder="Hello Shivendra, I would like to discuss..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%; padding-block: 13px;">
+                <span>Send Message</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+            </form>
           </div>
         </div>
       </div>
@@ -603,21 +675,20 @@
   </main>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-container">
-      <div class="footer-left">
-        <p class="footer-copyright">&copy; <span id="year">2026</span> Shivendra Gupta &bull; Development Lead &amp; Systems Architect</p>
-        <p class="footer-subtext">Engineered for high performance with modern semantic HTML5, CSS tokens, and zero-bloat vanilla JavaScript.</p>
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div>
+        <p>© 2026 Shivendra Gupta. Crafted with modern HTML5, CSS3 Glassmorphism & Vanilla JS.</p>
+        <p style="font-size: 0.78rem; margin-top: 4px; color: var(--text-dim);">Deployed on AWS Amplify & CloudFront CDN via Antigravity IDE.</p>
       </div>
-
-      <div class="footer-right">
-        <a href="#hero" class="back-to-top-btn" aria-label="Back to top">
-          <span>Back to Top</span>
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-        </a>
+      <div>
+        <a href="#hero" class="btn btn-secondary" style="font-size: 0.8rem; padding: 6px 14px;">↑ Back to top</a>
       </div>
     </div>
   </footer>
+
+  <!-- Toast Notification Hub -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
 
   <script src="script.js"></script>
 </body>
